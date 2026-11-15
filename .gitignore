@@ -1,0 +1,21 @@
+# Backend
+backend/.gradle/
+backend/build/
+backend/data/
+backend/.kotlin/
+
+# Android
+android/.gradle/
+android/.kotlin/
+android/local.properties
+android/build/
+android/app/build/
+android/captures/
+*.apk
+*.aab
+
+# IDE / sistema
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
