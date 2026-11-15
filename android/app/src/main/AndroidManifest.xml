@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- usesCleartextTraffic: a API local de desenvolvimento usa HTTP (sem TLS). -->
+    <application
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GameMatch"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".ui.welcome.WelcomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GameMatch.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".ui.preferences.PreferencesActivity"
+            android:label="@string/title_preferences" />
+        <activity
+            android:name=".ui.loading.LoadingActivity"
+            android:theme="@style/Theme.GameMatch.NoActionBar" />
+        <activity
+            android:name=".ui.result.ResultActivity"
+            android:label="@string/title_result" />
+        <activity
+            android:name=".ui.detail.GameDetailActivity"
+            android:label="@string/title_detail" />
+        <activity
+            android:name=".ui.history.HistoryActivity"
+            android:label="@string/title_history" />
+    </application>
+
+</manifest>

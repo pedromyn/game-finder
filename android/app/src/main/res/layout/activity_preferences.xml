@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout style="@style/Screen">
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            style="@style/Text.Title"
+            android:textSize="22sp" />
+
+        <TextView
+            style="@style/Text.Section"
+            android:text="@string/label_platform" />
+
+        <Spinner
+            android:id="@+id/spPlatform"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:entries="@array/platforms" />
+
+        <TextView
+            style="@style/Text.Section"
+            android:text="@string/label_genres" />
+
+        <!-- Os CheckBoxes marcados são lidos percorrendo os filhos deste GridLayout. -->
+        <GridLayout
+            android:id="@+id/gridGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2">
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_action" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_adventure" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_rpg" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_strategy" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_platformer" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_puzzle" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_shooter" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_horror" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_simulation" />
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_columnWeight="1"
+                android:text="@string/genre_sports" />
+        </GridLayout>
+
+        <TextView
+            style="@style/Text.Section"
+            android:text="@string/label_mode" />
+
+        <RadioGroup
+            android:id="@+id/rgMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@+id/rbSolo"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbSolo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_solo" />
+
+            <RadioButton
+                android:id="@+id/rbOnline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/mode_online" />
+        </RadioGroup>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swShortOnly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/label_short_only"
+            android:textColor="@color/text"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnRecommend"
+            style="@style/Button.Primary"
+            android:layout_marginTop="24dp"
+            android:text="@string/action_recommend" />
+
+    </LinearLayout>
+</ScrollView>

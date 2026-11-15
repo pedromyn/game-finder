@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GameMatch</string>
+
+    <!-- Títulos das telas -->
+    <string name="title_preferences">Suas preferências</string>
+    <string name="title_result">Seu ranking</string>
+    <string name="title_detail">Detalhes do jogo</string>
+    <string name="title_history">Histórico</string>
+
+    <!-- Boas-vindas -->
+    <string name="welcome_subtitle">Responda algumas perguntas e descubra os jogos que mais combinam com você.</string>
+    <string name="hint_name">Seu nome</string>
+    <string name="action_start">Começar</string>
+    <string name="action_history">Ver histórico</string>
+    <string name="error_name_required">Digite seu nome para começar</string>
+
+    <!-- Preferências -->
+    <string name="preferences_greeting">Olá, %1$s! O que você procura?</string>
+    <string name="label_platform">Plataforma</string>
+    <string name="label_genres">Gêneros favoritos</string>
+    <string name="label_mode">Como você prefere jogar?</string>
+    <string name="mode_solo">Solo</string>
+    <string name="mode_online">Online</string>
+    <string name="mode_both">Solo ou online</string>
+    <string name="label_short_only">Só jogos curtos</string>
+    <string name="action_recommend">Ver recomendações</string>
+    <string name="error_genre_required">Escolha pelo menos um gênero</string>
+    <string-array name="platforms">
+        <item>PC</item>
+        <item>PlayStation</item>
+        <item>Xbox</item>
+        <item>Switch</item>
+    </string-array>
+    <string name="genre_action">Ação</string>
+    <string name="genre_adventure">Aventura</string>
+    <string name="genre_rpg">RPG</string>
+    <string name="genre_strategy">Estratégia</string>
+    <string name="genre_platformer">Plataforma</string>
+    <string name="genre_puzzle">Puzzle</string>
+    <string name="genre_shooter">Tiro</string>
+    <string name="genre_horror">Terror</string>
+    <string name="genre_simulation">Simulação</string>
+    <string name="genre_sports">Esporte</string>
+
+    <!-- Carregando / estados -->
+    <string name="loading_recommendation">Calculando sua compatibilidade…</string>
+    <string name="action_retry">Tentar novamente</string>
+    <string name="action_back">Voltar</string>
+
+    <!-- Resultado -->
+    <string name="result_summary">%1$s · %2$s · %3$s</string>
+    <string name="result_summary_short">%1$s · só jogos curtos</string>
+    <string name="score_percent">%1$d%%</string>
+    <string name="ranking_position">#%1$d</string>
+    <string name="cover_description">Capa do jogo</string>
+
+    <!-- Detalhes -->
+    <string name="detail_compatibility">%1$d%% compatível com você</string>
+    <string name="detail_genres">Gêneros</string>
+    <string name="detail_platforms">Plataformas</string>
+    <string name="detail_mode">Modo de jogo</string>
+    <string name="detail_length">Duração</string>
+    <string name="length_short">Curta</string>
+    <string name="length_long">Longa</string>
+    <string name="action_open_store">Abrir na loja</string>
+    <string name="action_share">Compartilhar</string>
+    <string name="share_text">O GameMatch me recomendou %1$s! Dá uma olhada: %2$s</string>
+    <string name="share_chooser">Compartilhar jogo</string>
+    <string name="error_no_app">Nenhum aplicativo disponível para esta ação</string>
+
+    <!-- Histórico -->
+    <string name="history_empty">Nenhuma recomendação ainda.\nFaça a primeira na tela inicial!</string>
+    <string name="history_subtitle">%1$s · %2$s</string>
+    <string name="history_top_game">Melhor resultado: %1$s (%2$d%%)</string>
+    <string name="action_favorite">Favoritar</string>
+    <string name="action_rename">Renomear</string>
+    <string name="action_delete">Apagar</string>
+    <string name="action_save">Salvar</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="rename_title">Renomear recomendação</string>
+    <string name="rename_hint">Título</string>
+    <string name="delete_title">Apagar recomendação?</string>
+    <string name="delete_message">“%1$s” será removida do histórico.</string>
+    <string name="message_renamed">Recomendação renomeada</string>
+    <string name="message_favorited">Adicionada aos favoritos</string>
+    <string name="message_unfavorited">Removida dos favoritos</string>
+    <string name="message_deleted">Recomendação apagada</string>
+</resources>
