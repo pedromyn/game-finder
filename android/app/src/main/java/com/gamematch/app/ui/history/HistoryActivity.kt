@@ -70,7 +70,7 @@ class HistoryActivity : BaseActivity() {
     private fun askNewTitle(item: Recommendation) {
         val input = EditText(this).apply {
             setText(item.title)
-            setSelection(item.title.length)
+            setSelectAllOnFocus(true) // digitar já substitui o título antigo
             hint = getString(R.string.rename_hint)
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
         }
