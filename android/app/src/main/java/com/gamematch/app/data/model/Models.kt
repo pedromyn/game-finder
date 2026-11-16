@@ -61,3 +61,9 @@ data class Profile(
 data class UpdateProfileRequest(
     val favoriteGenres: List<String>,
 )
+
+/** Corpo do POST /auth/register e /auth/login. */
+data class AuthRequest(
+    val userName: String,
+    val password: String,
+)

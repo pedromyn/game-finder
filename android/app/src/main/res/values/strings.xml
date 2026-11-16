@@ -11,9 +11,30 @@
     <!-- Boas-vindas -->
     <string name="welcome_subtitle">Responda algumas perguntas e descubra os jogos que mais combinam com você.</string>
     <string name="hint_name">Seu nome</string>
-    <string name="action_start">Começar</string>
     <string name="action_history">Ver histórico</string>
-    <string name="error_name_required">Digite seu nome para começar</string>
+    <string name="error_name_required">Digite seu nome</string>
+
+    <!-- Entrar / criar perfil -->
+    <string name="action_login">Entrar</string>
+    <string name="action_register">Criar perfil</string>
+    <string name="title_login">Entrar</string>
+    <string name="title_register">Criar perfil</string>
+    <string name="login_subtitle">Que bom te ver de novo! Entre com seu nome e senha.</string>
+    <string name="register_subtitle">Crie seu perfil para guardar suas recomendações, gêneros favoritos e jogos curtidos.</string>
+    <string name="hint_password">Senha</string>
+    <string name="hint_password_confirm">Confirme a senha</string>
+    <string name="error_password_short">A senha precisa ter pelo menos %1$d caracteres</string>
+    <string name="error_password_mismatch">As senhas não conferem</string>
+    <string name="switch_to_register">Não tem perfil? Criar agora</string>
+    <string name="switch_to_login">Já tem perfil? Entrar</string>
+    <string name="welcome_user">Bem-vindo(a), %1$s!</string>
+
+    <!-- Início -->
+    <string name="home_greeting">Olá, %1$s!</string>
+    <string name="home_subtitle">O que vamos jogar hoje?</string>
+    <string name="action_new_recommendation">Nova recomendação</string>
+    <string name="action_logout">Sair</string>
+    <string name="logout_title">Sair da sua conta?</string>
 
     <!-- Preferências -->
     <string name="preferences_greeting">Olá, %1$s! O que você procura?</string>

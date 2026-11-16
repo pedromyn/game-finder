@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gamematch.app.R
 import com.gamematch.app.adapter.HistoryAdapter
+import com.gamematch.app.data.UserSession
 import com.gamematch.app.data.api.apiCall
 import com.gamematch.app.data.model.Recommendation
 import com.gamematch.app.data.model.UpdateRecommendationRequest
@@ -20,7 +21,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-/** Tela 6: histórico (GET /recommendations) com renomear/favoritar (PUT) e apagar (DELETE). */
+/** Tela 8: histórico do usuário logado (GET /recommendations?userName=) com renomear/favoritar (PUT) e apagar (DELETE). */
 class HistoryActivity : BaseActivity() {
 
     private lateinit var binding: ActivityHistoryBinding
@@ -49,7 +50,7 @@ class HistoryActivity : BaseActivity() {
     private fun load() {
         state.loading()
         lifecycleScope.launch {
-            apiCall { getRecommendations() }
+            apiCall { getRecommendations(UserSession.userName(this@HistoryActivity)) }
                 .onSuccess(::show)
                 .onFailure { state.error(it.message, ::load) }
         }

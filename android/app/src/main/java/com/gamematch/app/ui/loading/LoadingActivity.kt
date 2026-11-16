@@ -16,7 +16,7 @@ import com.gamematch.app.ui.result.ResultActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-/** Tela 3: envia as preferências (POST /recommendations) e mostra o progresso. */
+/** Tela 5: envia as preferências (POST /recommendations) e mostra o progresso. */
 class LoadingActivity : BaseActivity() {
 
     private lateinit var binding: ActivityLoadingBinding

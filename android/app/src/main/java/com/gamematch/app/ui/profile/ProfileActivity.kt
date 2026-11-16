@@ -29,7 +29,7 @@ import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.toRequestBody
 
-/** Tela 7: perfil com foto, gêneros favoritos e jogos curtidos (GET/PUT /profiles/{nome}). */
+/** Tela 9: perfil com foto, gêneros favoritos e jogos curtidos (GET/PUT /profiles/{nome}). */
 class ProfileActivity : BaseActivity() {
 
     private lateinit var binding: ActivityProfileBinding

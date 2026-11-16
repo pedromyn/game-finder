@@ -1,5 +1,6 @@
 package com.gamematch.app.data.api
 
+import com.gamematch.app.data.model.AuthRequest
 import com.gamematch.app.data.model.Game
 import com.gamematch.app.data.model.PreferencesRequest
 import com.gamematch.app.data.model.Profile
@@ -16,9 +17,16 @@ import retrofit2.http.POST
 import retrofit2.http.PUT
 import retrofit2.http.Part
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 /** Endpoints da API GameMatch. */
 interface GameMatchApi {
+
+    @POST("auth/register")
+    suspend fun register(@Body request: AuthRequest): Profile
+
+    @POST("auth/login")
+    suspend fun login(@Body request: AuthRequest): Profile
 
     @GET("games/{id}")
     suspend fun getGame(@Path("id") id: Long): Game
@@ -26,8 +34,9 @@ interface GameMatchApi {
     @POST("recommendations")
     suspend fun createRecommendation(@Body preferences: PreferencesRequest): Recommendation
 
+    /** [userName] filtra o histórico de um usuário; null traz todos. */
     @GET("recommendations")
-    suspend fun getRecommendations(): List<Recommendation>
+    suspend fun getRecommendations(@Query("userName") userName: String?): List<Recommendation>
 
     @GET("recommendations/{id}")
     suspend fun getRecommendation(@Path("id") id: Long): Recommendation

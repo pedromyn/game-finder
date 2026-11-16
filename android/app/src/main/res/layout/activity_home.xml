@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        style="@style/Screen"
+        android:gravity="center"
+        android:padding="28dp">
+
+        <!-- Toque na foto abre o perfil -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@color/primary_container"
+            android:contentDescription="@string/photo_description"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_avatar_placeholder"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.GameMatch.Circle" />
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            style="@style/Text.Title"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            style="@style/Text.Secondary"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="40dp"
+            android:text="@string/home_subtitle"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnRecommend"
+            style="@style/Button.Primary"
+            android:text="@string/action_new_recommendation" />
+
+        <Button
+            android:id="@+id/btnProfile"
+            style="@style/Button.Secondary"
+            android:layout_marginTop="8dp"
+            android:text="@string/action_profile" />
+
+        <Button
+            android:id="@+id/btnHistory"
+            style="@style/Button.Secondary"
+            android:layout_marginTop="8dp"
+            android:text="@string/action_history" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/action_logout"
+            android:textColor="@color/error" />
+
+    </LinearLayout>
+</ScrollView>

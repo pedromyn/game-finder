@@ -26,44 +26,21 @@
         <TextView
             style="@style/Text.Secondary"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginBottom="40dp"
             android:gravity="center"
             android:text="@string/welcome_subtitle"
             android:textSize="15sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/tilName"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionDone"
-                android:inputType="textPersonName|textCapWords"
-                android:maxLength="30" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
-            android:id="@+id/btnStart"
+            android:id="@+id/btnLogin"
             style="@style/Button.Primary"
-            android:layout_marginTop="16dp"
-            android:text="@string/action_start" />
+            android:text="@string/action_login" />
 
         <Button
-            android:id="@+id/btnProfile"
+            android:id="@+id/btnRegister"
             style="@style/Button.Secondary"
             android:layout_marginTop="8dp"
-            android:text="@string/action_profile" />
-
-        <Button
-            android:id="@+id/btnHistory"
-            style="@style/Button.Secondary"
-            android:layout_marginTop="8dp"
-            android:text="@string/action_history" />
+            android:text="@string/action_register" />
 
     </LinearLayout>
 </ScrollView>

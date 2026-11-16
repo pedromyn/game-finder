@@ -23,7 +23,7 @@ import com.gamematch.app.ui.common.modeLabel
 import kotlinx.coroutines.launch
 
 /**
- * Tela 5: detalhes de um jogo (GET /games/{id}), com Intents implícitas para loja e compartilhamento
+ * Tela 7: detalhes de um jogo (GET /games/{id}), com Intents implícitas para loja e compartilhamento
  * e o botão de curtir, que salva o jogo no perfil (PUT/DELETE /profiles/{nome}/likes/{id}).
  */
 class GameDetailActivity : BaseActivity() {

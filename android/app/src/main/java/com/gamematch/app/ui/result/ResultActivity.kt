@@ -17,7 +17,7 @@ import com.gamematch.app.ui.detail.GameDetailActivity
 import com.gamematch.app.ui.history.HistoryActivity
 import kotlinx.coroutines.launch
 
-/** Tela 4: ranking de jogos de uma recomendação (GET /recommendations/{id}). */
+/** Tela 6: ranking de jogos de uma recomendação (GET /recommendations/{id}). */
 class ResultActivity : BaseActivity() {
 
     private lateinit var binding: ActivityResultBinding

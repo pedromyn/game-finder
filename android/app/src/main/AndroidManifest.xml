@@ -22,6 +22,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.auth.AuthActivity" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:theme="@style/Theme.GameMatch.NoActionBar" />
         <activity
             android:name=".ui.preferences.PreferencesActivity"
             android:label="@string/title_preferences" />

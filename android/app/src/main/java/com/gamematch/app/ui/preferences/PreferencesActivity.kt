@@ -15,7 +15,7 @@ import com.gamematch.app.ui.common.genreOptions
 import com.gamematch.app.ui.loading.LoadingActivity
 import kotlinx.coroutines.launch
 
-/** Tela 2: coleta as preferências (plataforma, gêneros, modo e duração). */
+/** Tela 4: coleta as preferências (plataforma, gêneros, modo e duração). */
 class PreferencesActivity : BaseActivity() {
 
     private lateinit var binding: ActivityPreferencesBinding
