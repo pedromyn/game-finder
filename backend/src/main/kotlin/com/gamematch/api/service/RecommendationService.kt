@@ -10,10 +10,8 @@ import com.gamematch.api.model.Recommendation
 import com.gamematch.api.model.RecommendationItem
 import com.gamematch.api.repository.GameRepository
 import com.gamematch.api.repository.RecommendationRepository
-import org.springframework.http.HttpStatus
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import org.springframework.web.server.ResponseStatusException
 import kotlin.math.roundToInt
 
 @Service
@@ -69,9 +67,7 @@ class RecommendationService(
     fun delete(id: Long) = recommendations.delete(load(id))
 
     private fun load(id: Long): Recommendation = recommendations.findById(id)
-        .orElseThrow { ResponseStatusException(HttpStatus.NOT_FOUND, "Recomendação $id não encontrada.") }
-
-    private fun badRequest(message: String) = ResponseStatusException(HttpStatus.BAD_REQUEST, message)
+        .orElseThrow { notFound("Recomendação $id não encontrada.") }
 
     companion object {
         const val RANKING_SIZE = 10
