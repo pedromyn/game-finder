@@ -32,16 +32,18 @@
         <item>Xbox</item>
         <item>Switch</item>
     </string-array>
-    <string name="genre_action">Ação</string>
-    <string name="genre_adventure">Aventura</string>
-    <string name="genre_rpg">RPG</string>
-    <string name="genre_strategy">Estratégia</string>
-    <string name="genre_platformer">Plataforma</string>
-    <string name="genre_puzzle">Puzzle</string>
-    <string name="genre_shooter">Tiro</string>
-    <string name="genre_horror">Terror</string>
-    <string name="genre_simulation">Simulação</string>
-    <string name="genre_sports">Esporte</string>
+    <string-array name="genres">
+        <item>Ação</item>
+        <item>Aventura</item>
+        <item>RPG</item>
+        <item>Estratégia</item>
+        <item>Plataforma</item>
+        <item>Puzzle</item>
+        <item>Tiro</item>
+        <item>Terror</item>
+        <item>Simulação</item>
+        <item>Esporte</item>
+    </string-array>
 
     <!-- Carregando / estados -->
     <string name="loading_recommendation">Calculando sua compatibilidade…</string>
@@ -86,4 +88,21 @@
     <string name="message_favorited">Adicionada aos favoritos</string>
     <string name="message_unfavorited">Removida dos favoritos</string>
     <string name="message_deleted">Recomendação apagada</string>
+
+    <!-- Perfil -->
+    <string name="title_profile">Meu perfil</string>
+    <string name="action_profile">Meu perfil</string>
+    <string name="action_change_photo">Trocar foto</string>
+    <string name="photo_description">Foto de perfil</string>
+    <string name="action_save_genres">Salvar gêneros</string>
+    <string name="profile_liked_games">Jogos curtidos</string>
+    <string name="profile_no_likes">Você ainda não curtiu nenhum jogo.
+Toque no coração na tela de detalhes.</string>
+    <string name="message_genres_saved">Gêneros favoritos salvos</string>
+    <string name="message_photo_saved">Foto atualizada</string>
+    <string name="error_image">Não foi possível ler a imagem</string>
+    <string name="action_like">Curtir</string>
+    <string name="action_unlike">Remover curtida</string>
+    <string name="message_liked">Jogo curtido! Ele aparece no seu perfil.</string>
+    <string name="message_unliked">Curtida removida</string>
 </resources>

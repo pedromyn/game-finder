@@ -11,4 +11,5 @@
     <color name="text_secondary">#A6A6C0</color>
     <color name="error">#F87171</color>
     <color name="star">#FBBF24</color>
+    <color name="like">#F472B6</color>
 </resources>

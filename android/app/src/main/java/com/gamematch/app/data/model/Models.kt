@@ -48,3 +48,16 @@ data class UpdateRecommendationRequest(
     val title: String? = null,
     val favorite: Boolean? = null,
 )
+
+data class Profile(
+    val userName: String,
+    val favoriteGenres: List<String>,
+    val likedGames: List<Game>,
+    /** null quando a pessoa ainda não tem foto. */
+    val photoVersion: Long?,
+)
+
+/** Corpo do PUT /profiles/{userName}: substitui a lista de gêneros favoritos. */
+data class UpdateProfileRequest(
+    val favoriteGenres: List<String>,
+)

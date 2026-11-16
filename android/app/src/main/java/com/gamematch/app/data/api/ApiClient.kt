@@ -1,6 +1,8 @@
 package com.gamematch.app.data.api
 
+import android.net.Uri
 import com.gamematch.app.BuildConfig
+import com.gamematch.app.data.model.Profile
 import com.google.gson.JsonParser
 import kotlinx.coroutines.CancellationException
 import retrofit2.HttpException
@@ -16,6 +18,11 @@ object ApiClient {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(GameMatchApi::class.java)
+    }
+
+    /** URL da foto de perfil, ou null se não houver. A versão na URL faz o app baixar a foto nova após uma troca. */
+    fun photoUrl(profile: Profile): String? = profile.photoVersion?.let {
+        "${BuildConfig.API_BASE_URL}profiles/${Uri.encode(profile.userName)}/photo?v=$it"
     }
 }
 

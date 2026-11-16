@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.gamematch.app.R
 import com.gamematch.app.data.model.RankedGame
 import com.gamematch.app.databinding.ItemRankedGameBinding
-import com.gamematch.app.ui.common.loadCover
+import com.gamematch.app.ui.common.loadImage
 
 /** Lista do ranking: um card por jogo com capa, nome e compatibilidade. */
 class RankedGameAdapter(
@@ -20,7 +20,7 @@ class RankedGameAdapter(
 
         fun bind(ranked: RankedGame, position: Int) = with(binding) {
             val context = root.context
-            ivCover.loadCover(ranked.game.imageUrl)
+            ivCover.loadImage(ranked.game.imageUrl)
             tvPosition.text = context.getString(R.string.ranking_position, position + 1)
             tvName.text = ranked.game.name
             tvGenres.text = ranked.game.genres.joinToString(" · ")

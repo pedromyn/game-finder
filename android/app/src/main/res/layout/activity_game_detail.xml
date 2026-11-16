@@ -23,9 +23,28 @@
 
             <LinearLayout style="@style/Screen">
 
-                <TextView
-                    android:id="@+id/tvName"
-                    style="@style/Text.Title" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvName"
+                        style="@style/Text.Title"
+                        android:layout_width="0dp"
+                        android:layout_weight="1" />
+
+                    <!-- Aparece depois de saber se o jogo já foi curtido -->
+                    <ImageButton
+                        android:id="@+id/btnLike"
+                        style="@style/IconButton"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:contentDescription="@string/action_like"
+                        android:src="@drawable/ic_favorite_border"
+                        android:visibility="gone" />
+                </LinearLayout>
 
                 <TextView
                     android:id="@+id/tvScore"

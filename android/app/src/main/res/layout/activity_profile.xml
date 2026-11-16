@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout style="@style/Screen">
+
+            <!-- Foto + indicador de envio sobreposto -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivPhoto"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/primary_container"
+                    android:contentDescription="@string/photo_description"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_avatar_placeholder"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.GameMatch.Circle" />
+
+                <ProgressBar
+                    android:id="@+id/photoProgress"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/Text.Title"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnPhoto"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="@string/action_change_photo" />
+
+            <TextView
+                style="@style/Text.Section"
+                android:text="@string/label_genres" />
+
+            <!-- Um Chip por gênero, criado em código a partir de @array/genres -->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGenres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnSaveGenres"
+                style="@style/Button.Secondary"
+                android:layout_marginTop="12dp"
+                android:text="@string/action_save_genres" />
+
+            <TextView
+                style="@style/Text.Section"
+                android:text="@string/profile_liked_games" />
+
+            <TextView
+                android:id="@+id/tvNoLikes"
+                style="@style/Text.Secondary"
+                android:textSize="15sp"
+                android:text="@string/profile_no_likes"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvLikes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/state"
+        layout="@layout/view_state" />
+
+</FrameLayout>

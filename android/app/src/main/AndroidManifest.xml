@@ -37,6 +37,9 @@
         <activity
             android:name=".ui.history.HistoryActivity"
             android:label="@string/title_history" />
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:label="@string/title_profile" />
     </application>
 
 </manifest>

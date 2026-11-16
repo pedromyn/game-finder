@@ -24,63 +24,12 @@
             style="@style/Text.Section"
             android:text="@string/label_genres" />
 
-        <!-- Os CheckBoxes marcados são lidos percorrendo os filhos deste GridLayout. -->
+        <!-- Preenchido em código com um CheckBox para cada item de @array/genres. -->
         <GridLayout
             android:id="@+id/gridGenres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2">
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_action" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_adventure" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_rpg" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_strategy" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_platformer" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_puzzle" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_shooter" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_horror" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_simulation" />
-
-            <CheckBox
-                android:layout_width="0dp"
-                android:layout_columnWeight="1"
-                android:text="@string/genre_sports" />
-        </GridLayout>
+            android:columnCount="2" />
 
         <TextView
             style="@style/Text.Section"

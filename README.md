@@ -6,6 +6,8 @@ Recomendador de jogos — projeto da AP2 de Desenvolvimento Mobile.
 
 O usuário informa o nome e responde algumas preferências (plataforma, gêneros favoritos, solo ou online, só jogos curtos). O app envia as respostas para uma API REST, que calcula a compatibilidade de cada jogo de um catálogo de 34 títulos salvo no banco e devolve um ranking personalizado com os 10 melhores. Cada recomendação fica salva em um histórico, onde pode ser reaberta, renomeada, favoritada ou apagada.
 
+Cada usuário também tem um perfil com foto, gêneros favoritos (que já vêm marcados na tela de preferências) e os jogos que curtiu na tela de detalhes.
+
 O projeto tem duas partes:
 
 - `backend/` — API REST em Spring Boot (Kotlin) com banco H2 em arquivo.
@@ -66,30 +68,32 @@ O app acessa a API em `http://10.0.2.2:8080/`, endereço que só funciona no emu
 |:-:|:-:|:-:|
 | <img src="docs/screenshots/4-resultado.png" width="240"> | <img src="docs/screenshots/5-detalhes.png" width="240"> | <img src="docs/screenshots/6-historico.png" width="240"> |
 
-Estado de erro (API fora do ar), com opção de tentar novamente:
-
-<img src="docs/screenshots/7-erro.png" width="240">
+| Perfil | Estado de erro (API fora do ar) |
+|:-:|:-:|
+| <img src="docs/screenshots/8-perfil.png" width="240"> | <img src="docs/screenshots/7-erro.png" width="240"> |
 
 ## Telas
 
 | # | Tela | O que faz |
 |---|------|-----------|
-| 1 | Boas-vindas | Pede o nome do usuário e inicia o fluxo (ou abre o histórico). |
-| 2 | Preferências | Plataforma (Spinner), gêneros (CheckBox), solo/online (RadioButton) e "só jogos curtos" (Switch). |
+| 1 | Boas-vindas | Pede o nome do usuário (lembrado entre execuções) e inicia o fluxo, ou abre o perfil ou o histórico. |
+| 2 | Preferências | Plataforma (Spinner), gêneros (CheckBox, já marcando os favoritos do perfil), solo/online (RadioButton) e "só jogos curtos" (Switch). |
 | 3 | Carregando | ProgressBar enquanto faz o `POST /recommendations`; em caso de erro, permite tentar de novo. |
 | 4 | Resultado | RecyclerView de CardViews com capa, nome e % de compatibilidade. |
-| 5 | Detalhes do jogo | Dados do jogo e Intents implícitas: abrir a loja (`ACTION_VIEW`) e compartilhar (`ACTION_SEND`). |
+| 5 | Detalhes do jogo | Dados do jogo, botão de curtir e Intents implícitas: abrir a loja (`ACTION_VIEW`) e compartilhar (`ACTION_SEND`). |
 | 6 | Histórico | Lista do `GET /recommendations`, com favoritar e renomear (`PUT`) e apagar (`DELETE`). |
+| 7 | Perfil | Foto (escolhida no seletor de fotos do sistema e enviada à API), gêneros favoritos (Chips) e lista de jogos curtidos. |
 
-A navegação entre as telas usa Intents explícitas. Views utilizadas: TextView, EditText, Button, ImageButton, ImageView, Spinner, CheckBox, RadioButton, Switch, ProgressBar, RecyclerView e CardView.
+A navegação entre as telas usa Intents explícitas. Views utilizadas: TextView, EditText, Button, ImageButton, ImageView, ShapeableImageView, Spinner, CheckBox, RadioButton, Switch, Chip, ProgressBar, RecyclerView e CardView.
 
 ### Organização do código Android
 
 ```
 com.gamematch.app
 ├── data
-│   ├── api      Retrofit (GameMatchApi, ApiClient e o helper apiCall)
-│   └── model    Classes de dados trocadas com a API
+│   ├── api          Retrofit (GameMatchApi, ApiClient e o helper apiCall)
+│   ├── model        Classes de dados trocadas com a API
+│   └── UserSession  Nome do usuário atual, salvo em SharedPreferences
 ├── adapter      Adapters dos RecyclerViews
 └── ui
     ├── common       Código compartilhado (BaseActivity, ScreenState, extensões)
@@ -98,7 +102,8 @@ com.gamematch.app
     ├── loading      Tela 3
     ├── result       Tela 4
     ├── detail       Tela 5
-    └── history      Tela 6
+    ├── history      Tela 6
+    └── profile      Tela 7
 ```
 
 ## API
@@ -116,6 +121,14 @@ Todas as requisições e respostas usam JSON.
 | GET | `/recommendations/{id}` | Busca uma recomendação. |
 | PUT | `/recommendations/{id}` | Renomeia e/ou favorita uma recomendação. |
 | DELETE | `/recommendations/{id}` | Apaga uma recomendação. |
+| GET | `/profiles/{userName}` | Busca o perfil (devolve um perfil vazio se ainda não existir). |
+| PUT | `/profiles/{userName}` | Salva os gêneros favoritos. |
+| POST | `/profiles/{userName}/photo` | Envia a foto de perfil (`multipart/form-data`, campo `photo`). |
+| GET | `/profiles/{userName}/photo` | Devolve a imagem da foto. |
+| PUT | `/profiles/{userName}/likes/{gameId}` | Curte um jogo. |
+| DELETE | `/profiles/{userName}/likes/{gameId}` | Remove a curtida. |
+
+O perfil é identificado pelo nome digitado na tela de boas-vindas (não há login).
 
 Exemplo de `POST /recommendations`:
 

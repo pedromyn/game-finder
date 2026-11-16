@@ -17,7 +17,6 @@ import com.gamematch.app.ui.common.BaseActivity
 import com.gamematch.app.ui.common.ScreenState
 import com.gamematch.app.ui.result.ResultActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
@@ -125,9 +124,5 @@ class HistoryActivity : BaseActivity() {
                 }
                 .onFailure { snackbar(it.message) }
         }
-    }
-
-    private fun snackbar(message: String?) {
-        Snackbar.make(binding.root, message.orEmpty(), Snackbar.LENGTH_SHORT).show()
     }
 }

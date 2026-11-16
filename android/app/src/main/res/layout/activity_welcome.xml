@@ -54,6 +54,12 @@
             android:text="@string/action_start" />
 
         <Button
+            android:id="@+id/btnProfile"
+            style="@style/Button.Secondary"
+            android:layout_marginTop="8dp"
+            android:text="@string/action_profile" />
+
+        <Button
             android:id="@+id/btnHistory"
             style="@style/Button.Secondary"
             android:layout_marginTop="8dp"
