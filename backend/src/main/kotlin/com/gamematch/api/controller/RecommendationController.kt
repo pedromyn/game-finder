@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
+import io.swagger.v3.oas.annotations.Parameter
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
@@ -29,7 +31,10 @@ class RecommendationController(private val service: RecommendationService) {
 
     @GetMapping
     @Operation(summary = "Lista o histórico de recomendações (mais recentes primeiro)")
-    fun findAll(): List<RecommendationResponse> = service.findAll()
+    fun findAll(
+        @Parameter(description = "Se informado, lista só as recomendações deste usuário")
+        @RequestParam(required = false) userName: String?,
+    ): List<RecommendationResponse> = service.findAll(userName)
 
     @GetMapping("/{id}")
     @Operation(summary = "Busca uma recomendação pelo id")

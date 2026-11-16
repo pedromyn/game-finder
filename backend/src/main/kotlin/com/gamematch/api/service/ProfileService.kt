@@ -17,16 +17,12 @@ class ProfileService(
     private val games: GameRepository,
 ) {
 
-    /** Devolve o perfil; se ainda não existir, devolve um perfil vazio (sem salvar). */
     @Transactional(readOnly = true)
-    fun find(userName: String): ProfileResponse {
-        val key = key(userName)
-        return profiles.findById(key).orElseGet { Profile(userName = key) }.toResponse()
-    }
+    fun find(userName: String): ProfileResponse = load(userName).toResponse()
 
     @Transactional
     fun updateGenres(userName: String, request: UpdateProfileRequest): ProfileResponse {
-        val profile = loadOrCreate(userName)
+        val profile = load(userName)
         profile.favoriteGenres.clear()
         profile.favoriteGenres += request.favoriteGenres.map { it.trim() }.filter { it.isNotEmpty() }
         return profile.toResponse()
@@ -36,7 +32,7 @@ class ProfileService(
     fun updatePhoto(userName: String, file: MultipartFile): ProfileResponse {
         val type = file.contentType
         if (file.isEmpty || type == null || !type.startsWith("image/")) throw badRequest("Envie um arquivo de imagem.")
-        val profile = loadOrCreate(userName)
+        val profile = load(userName)
         profile.photo = file.bytes
         profile.photoContentType = type
         profile.photoVersion++
@@ -45,31 +41,27 @@ class ProfileService(
 
     @Transactional(readOnly = true)
     fun photo(userName: String): ProfilePhoto {
-        val profile = profiles.findById(key(userName)).orElse(null)
-        val bytes = profile?.photo ?: throw notFound("$userName ainda não tem foto.")
+        val profile = load(userName)
+        val bytes = profile.photo ?: throw notFound("$userName ainda não tem foto.")
         return ProfilePhoto(bytes, profile.photoContentType ?: "image/jpeg")
     }
 
     @Transactional
     fun like(userName: String, gameId: Long): ProfileResponse {
         val game = games.findGame(gameId)
-        val profile = loadOrCreate(userName)
+        val profile = load(userName)
         if (profile.likedGames.none { it.id == gameId }) profile.likedGames += game
         return profile.toResponse()
     }
 
     @Transactional
     fun unlike(userName: String, gameId: Long): ProfileResponse {
-        val profile = loadOrCreate(userName)
+        val profile = load(userName)
         profile.likedGames.removeIf { it.id == gameId }
         return profile.toResponse()
     }
 
-    private fun loadOrCreate(userName: String): Profile {
-        val key = key(userName)
-        return profiles.findById(key).orElseGet { profiles.save(Profile(userName = key)) }
-    }
-
-    private fun key(userName: String): String =
-        userName.trim().ifEmpty { throw badRequest("Informe o nome do usuário.") }
+    /** Perfis só existem depois do cadastro (POST /auth/register). */
+    private fun load(userName: String): Profile = profiles.findById(userName.trim())
+        .orElseThrow { notFound("Perfil $userName não encontrado.") }
 }

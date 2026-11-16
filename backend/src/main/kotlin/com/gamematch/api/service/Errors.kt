@@ -11,6 +11,10 @@ fun badRequest(message: String) = ResponseStatusException(HttpStatus.BAD_REQUEST
 
 fun notFound(message: String) = ResponseStatusException(HttpStatus.NOT_FOUND, message)
 
+fun unauthorized(message: String) = ResponseStatusException(HttpStatus.UNAUTHORIZED, message)
+
+fun conflict(message: String) = ResponseStatusException(HttpStatus.CONFLICT, message)
+
 /** Busca um jogo ou responde 404. */
 fun GameRepository.findGame(id: Long): Game =
     findById(id).orElseThrow { notFound("Jogo $id não encontrado.") }

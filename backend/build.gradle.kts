@@ -38,5 +38,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("tools.jackson.module:jackson-module-kotlin")
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:3.2.0")
+    // Só o BCrypt, para guardar o hash das senhas (sem o restante do Spring Security).
+    implementation("org.springframework.security:spring-security-crypto")
     runtimeOnly("com.h2database:h2")
 }

@@ -9,6 +9,7 @@ interface GameRepository : JpaRepository<Game, Long>
 
 interface RecommendationRepository : JpaRepository<Recommendation, Long> {
     fun findAllByOrderByCreatedAtDesc(): List<Recommendation>
+    fun findAllByUserNameOrderByCreatedAtDesc(userName: String): List<Recommendation>
 }
 
 interface ProfileRepository : JpaRepository<Profile, String>

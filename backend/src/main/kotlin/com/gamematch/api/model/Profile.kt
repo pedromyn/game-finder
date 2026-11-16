@@ -7,11 +7,13 @@ import jakarta.persistence.Id
 import jakarta.persistence.Lob
 import jakarta.persistence.ManyToMany
 
-/** Perfil de um usuário, identificado pelo nome digitado na tela de boas-vindas. */
+/** Perfil de um usuário, criado no cadastro (nome + senha). O nome é o identificador. */
 @Entity
 class Profile(
     @Id
     var userName: String = "",
+    /** Senha guardada só como hash BCrypt (nunca em texto puro e nunca enviada no JSON). */
+    var passwordHash: String? = null,
     @ElementCollection(fetch = FetchType.EAGER)
     var favoriteGenres: MutableSet<String> = mutableSetOf(),
     @ManyToMany(fetch = FetchType.EAGER)

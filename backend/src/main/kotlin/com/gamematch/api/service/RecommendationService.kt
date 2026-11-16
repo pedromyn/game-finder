@@ -46,8 +46,14 @@ class RecommendationService(
     }
 
     @Transactional(readOnly = true)
-    fun findAll(): List<RecommendationResponse> =
-        recommendations.findAllByOrderByCreatedAtDesc().map { it.toResponse() }
+    fun findAll(userName: String?): List<RecommendationResponse> {
+        val list = if (userName.isNullOrBlank()) {
+            recommendations.findAllByOrderByCreatedAtDesc()
+        } else {
+            recommendations.findAllByUserNameOrderByCreatedAtDesc(userName.trim())
+        }
+        return list.map { it.toResponse() }
+    }
 
     @Transactional(readOnly = true)
     fun findById(id: Long): RecommendationResponse = load(id).toResponse()
