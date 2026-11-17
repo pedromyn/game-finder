@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Logo: controle 8 bits, nome e tagline. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="128dp"
+        android:layout_height="72dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_pixel_controller" />
+
+    <TextView
+        style="@style/Text.Logo"
+        android:layout_marginTop="20dp"
+        android:text="@string/logo_name" />
+
+    <TextView
+        style="@style/Text.Tagline"
+        android:layout_marginTop="10dp"
+        android:text="@string/tagline" />
+
+</LinearLayout>

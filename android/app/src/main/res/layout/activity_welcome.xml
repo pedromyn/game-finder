@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -10,22 +9,11 @@
         android:gravity="center"
         android:padding="28dp">
 
-        <ImageView
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:importantForAccessibility="no"
-            android:src="@drawable/ic_gamepad"
-            app:tint="@color/primary" />
-
-        <TextView
-            style="@style/Text.Title"
-            android:layout_marginTop="8dp"
-            android:text="@string/app_name"
-            android:textSize="34sp" />
+        <include layout="@layout/view_logo" />
 
         <TextView
             style="@style/Text.Secondary"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="28dp"
             android:layout_marginBottom="40dp"
             android:gravity="center"
             android:text="@string/welcome_subtitle"

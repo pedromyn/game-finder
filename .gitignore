@@ -3,11 +3,15 @@ backend/.gradle/
 backend/build/
 backend/data/
 backend/.kotlin/
+backend/local.properties
 
 # Android
 android/.gradle/
 android/.kotlin/
 android/local.properties
+
+# Gerado pelo Android Studio (configuracao local do Gradle)
+*/gradle/gradle-daemon-jvm.properties
 android/build/
 android/app/build/
 android/captures/

@@ -206,3 +206,8 @@ Cada jogo recebe uma nota de 0 a 100, somando quatro critérios:
 | Plataforma | 25 | O jogo está disponível na plataforma escolhida. |
 | Modo | 15 | O modo do jogo (solo/online) combina com o escolhido. |
 | Duração | 10 | Com "só jogos curtos" ligado, só jogos curtos pontuam; desligado, todos pontuam. |
+
+## Créditos
+
+- Fontes da logo: [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) e [DotGothic16](https://fonts.google.com/specimen/DotGothic16), ambas sob a SIL Open Font License (cópias em `docs/licenses/`).
+- Capas dos jogos e links das lojas: Steam.

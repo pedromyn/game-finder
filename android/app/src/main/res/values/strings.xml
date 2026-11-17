@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">GameMatch</string>
+    <string name="logo_name" translatable="false">GAMEMATCH</string>
+    <string name="tagline" translatable="false">ゲムフィンだ</string>
 
     <!-- Títulos das telas -->
     <string name="title_preferences">Suas preferências</string>

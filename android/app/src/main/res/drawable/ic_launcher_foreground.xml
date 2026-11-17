@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@drawable/ic_gamepad"
-    android:inset="28%" />
+    android:drawable="@drawable/ic_pixel_controller"
+    android:insetLeft="22%"
+    android:insetRight="22%"
+    android:insetTop="30%"
+    android:insetBottom="30%" />
